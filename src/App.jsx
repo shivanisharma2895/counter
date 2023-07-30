@@ -2,23 +2,27 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const[ counter, setCounter] = useState(0); 
-  
+  const [counter, setCounter] = useState(0);
+
   function increment() {
-       setCounter(counter + 1)
+    setCounter(counter + 1)
   }
 
   function decrement() {
-    setCounter(counter - 1)
+    if (counter > 0) { setCounter(counter - 1) }
+
   }
 
   return (
-    <div>
+    <div className='container'>
       <button onClick={decrement}>-</button>
-      <label>{counter}</label>
+      <label>Counter  {counter}</label>
       <button onClick={increment}>+</button>
-   </div>
+    </div>
   );
 }
 
 export default App;
+
+
+
